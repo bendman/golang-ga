@@ -77,9 +77,9 @@ func avgFitness(ind *models.Individual) {
 	totalFitness := 0
 
 	for i := 0; i < trials; i++ {
-		trainMap := trainMaps[i]
-		totalFitness += checkFitness(ind, trainMap)
-		// totalFitness += checkFitness(ind, models.MakeFloorMap())
+		// trainMap := trainMaps[i]
+		// totalFitness += checkFitness(ind, trainMap)
+		totalFitness += checkFitness(ind, models.MakeFloorMap())
 	}
 
 	ind.Fitness = float64(totalFitness) / float64(trials)

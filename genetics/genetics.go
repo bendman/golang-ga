@@ -78,7 +78,7 @@ func reproduce(pop *models.Population) *models.Population {
 
 func mutate(ind *models.Individual) {
 	for i := range ind.Genome {
-		if rand.Float64() < 0.015 {
+		if rand.Float64() < 0.02 {
 			ind.Genome[i] = models.RandomAction()
 		}
 	}

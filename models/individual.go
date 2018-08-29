@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 )
 
 // Action defines the possible alleles (actions) for each gene (state)
@@ -34,7 +35,11 @@ type Individual struct {
 }
 
 func (ind Individual) String() string {
-	return fmt.Sprintf("Fitness:\t%v\nGenome:\t%v", ind.Fitness, ind.Genome)
+	genome := ""
+	for _, gene := range ind.Genome {
+		genome += strconv.Itoa(int(gene))
+	}
+	return fmt.Sprintf("Fitness:\t%v\nGenome:\t%v", ind.Fitness, genome)
 }
 
 // RandomAction produces a single random action allele
